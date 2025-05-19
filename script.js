@@ -120,112 +120,50 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentTheme === 'dark') {
             themeText.textContent = 'Light Mode';
             themeIcon.classList.replace('fa-moon', 'fa-sun');
+            themeToggleBtn.classList.add('active');
         }
 
         themeToggleBtn.addEventListener('click', () => {
             document.documentElement.classList.add('theme-transition');
-
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-            themeToggleBtn.classList.add('active');
-
-            const ripple = document.createElement('div');
-            ripple.className = 'theme-ripple';
-            document.body.appendChild(ripple);
+            let theme = 'light';
+            if (document.documentElement.getAttribute('data-theme') === 'light') {
+                theme = 'dark';
+                themeText.textContent = 'Light Mode';
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                themeToggleBtn.classList.add('active');
+            } else {
+                themeText.textContent = 'Dark Mode';
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                themeToggleBtn.classList.remove('active');
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
 
             setTimeout(() => {
-                ripple.style.transform = 'scale(30)';
-                ripple.style.opacity = '0';
-            }, 10);
-
-            setTimeout(() => {
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-
-                themeText.textContent = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
-                themeIcon.classList.replace(
-                    newTheme === 'dark' ? 'fa-moon' : 'fa-sun',
-                    newTheme === 'dark' ? 'fa-sun' : 'fa-moon'
-                );
-
-                setTimeout(() => {
-                    ripple.remove();
-                }, 500);
-
-                setTimeout(() => {
-                    document.documentElement.classList.remove('theme-transition');
-                    themeToggleBtn.classList.remove('active');
-                }, 500);
-            }, 200);
+                document.documentElement.classList.remove('theme-transition');
+            }, 500);
         });
     };
 
-    // Back to top button functionality
+    // Back to top button visibility
     const initBackToTop = () => {
-        if (backToTopBtn) {
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
-                    backToTopBtn.classList.add('visible');
-                } else {
-                    backToTopBtn.classList.remove('visible');
-                }
-            });
-
-            backToTopBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth',
-                });
-            });
-        }
+        window.addEventListener('scroll', () => {
+            backToTopBtn.classList.toggle('visible', window.scrollY > 300);
+        });
     };
 
     // Contact form submission
     const initContactForm = () => {
-        console.log('Initializing contact form...');
         if (contactForm) {
-            console.log('Contact form found:', contactForm);
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            submitButton.addEventListener('click', () => {
-                submitButton.classList.add('clicked');
-                setTimeout(() => {
-                    submitButton.classList.remove('clicked');
-                }, 100);
-            });
-
             contactForm.addEventListener('submit', async (e) => {
-                console.log('Form submitted');
                 e.preventDefault();
-
-                // Client-side validation
-                const name = contactForm.querySelector('#name').value.trim();
-                const email = contactForm.querySelector('#email').value.trim();
-                const subject = contactForm.querySelector('#subject').value.trim();
-                const message = contactForm.querySelector('#message').value.trim();
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-                if (!name || !email || !subject || !message) {
-                    formStatus.textContent = 'Please fill in all required fields.';
-                    formStatus.className = 'form-message error';
-                    console.log('Validation failed: Missing required fields');
-                    return;
-                }
-
-                if (!emailRegex.test(email)) {
-                    formStatus.textContent = 'Please enter a valid email address.';
-                    formStatus.className = 'form-message error';
-                    console.log('Validation failed: Invalid email');
-                    return;
-                }
-
-                formStatus.textContent = 'Sending...';
-                formStatus.className = 'form-message';
-                console.log('Sending form data to Formspree...');
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+                formStatus.textContent = '';
 
                 try {
-                    const response = await fetch('https://formspree.io/f/mvgavgpq', {
+                    const response = await fetch(contactForm.action, {
                         method: 'POST',
                         body: new FormData(contactForm),
                         headers: {
@@ -234,42 +172,48 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
 
                     if (response.ok) {
-                        formStatus.textContent = 'Thank you! Your message has been sent.';
-                        formStatus.className = 'form-message success';
+                        formStatus.textContent = 'Message sent successfully!';
+                        formStatus.classList.add('success');
+                        formStatus.classList.remove('error');
                         contactForm.reset();
-                        console.log('Form submission successful');
                     } else {
-                        throw new Error(`Form submission failed with status: ${response.status}`);
+                        throw new Error('Failed to send message');
                     }
                 } catch (error) {
-                    formStatus.textContent = 'Failed to send message. Please try again.';
-                    formStatus.className = 'form-message error';
-                    console.error('Form submission error:', error);
+                    formStatus.textContent = 'Error sending message. Please try again.';
+                    formStatus.classList.add('error');
+                    formStatus.classList.remove('success');
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send Message';
                 }
-
-                // Clear status message after 5 seconds
-                setTimeout(() => {
-                    formStatus.textContent = '';
-                    formStatus.className = 'form-message';
-                }, 5000);
             });
-        } else {
-            console.error('Contact form not found! Check #contact-form ID.');
         }
     };
 
-    // Initialize all
-    const init = () => {
-        initLoadingScreen();
-        initAnimations();
-        menuToggle.addEventListener('click', toggleMenu);
-        closeMenuOnLinkClick();
-        handleHeaderScroll();
-        initSmoothScrolling();
-        initDarkMode();
-        initBackToTop();
-        initContactForm();
+    // Button click animation
+    const initButtonAnimation = () => {
+        document.querySelectorAll('.btn-primary').forEach((button) => {
+            button.addEventListener('click', () => {
+                if (!button.disabled) {
+                    button.classList.add('clicked');
+                    setTimeout(() => {
+                        button.classList.remove('clicked');
+                    }, 100);
+                }
+            });
+        });
     };
 
-    init();
+    // Initialize all functions
+    initLoadingScreen();
+    initAnimations();
+    if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+    closeMenuOnLinkClick();
+    handleHeaderScroll();
+    initSmoothScrolling();
+    initDarkMode();
+    initBackToTop();
+    initContactForm();
+    initButtonAnimation();
 });
