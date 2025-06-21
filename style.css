@@ -497,7 +497,7 @@ header .container {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: url('assets/1748035010378.jpg') center/cover no-repeat, #ccc;
+    background: url('assets/1748035010378 (1).jpg') center/cover no-repeat, #ccc;
     box-shadow: var(--shadow);
     border: 5px solid rgba(255, 255, 255, 0.3);
     transition: var(--transition); /* Smoothed */
