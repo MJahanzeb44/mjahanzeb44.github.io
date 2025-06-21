@@ -6,16 +6,16 @@
     <meta name="description" content="Muhammad Jahanzeb's portfolio showcasing computer science projects and skills.">
     <title>Muhammad Jahanzeb | Computer Science Professional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
-<body>
-    <!-- Loading Screen -->
+<body data-theme="light">
+    <div id="particles-js-global"></div>
     <div class="loading-screen">
         <div class="loading-spinner"></div>
     </div>
 
-    <!-- Header/Navigation -->
     <header role="banner">
         <div class="container">
             <a href="#hero" class="logo" aria-label="Muhammad Jahanzeb's Homepage">
@@ -31,9 +31,7 @@
                 <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
                 <button class="theme-toggle-btn" aria-label="Toggle between light and dark theme">
-                    <span class="theme-text">
-                        <span class="theme-text-inner">Dark Mode</span>
-                    </span>
+                    <span class="theme-text"><span class="theme-text-inner">Dark</span></span>
                     <i class="fas fa-moon theme-icon"></i>
                 </button>
             </nav>
@@ -43,75 +41,127 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <main role="main">
         <section id="hero" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="animate-pop-in">Muhammad <span>Jahanzeb</span></h1>
-                    <h2 class="animate-pop-in">Computer Science Graduate</h2>
-                    <p class="animate-pop-in">Passionate about problem-solving, system security, and optimizing digital solutions.</p>
-                    <div class="hero-buttons animate-pop-in">
-                        <a href="#contact" class="btn btn-primary">Contact Me</a>
-                        <a href="#projects" class="btn btn-secondary">View Projects</a>
+                    <div class="hero-text">
+                        <h1 class="animate-pop-in animate-lively">Muhammad <span>Jahanzeb</span></h1>
+                        <p class="animate-pop-in">A dedicated computer science professional with expertise in cybersecurity, software development, and cutting-edge technologies.</p>
+                        <div class="hero-buttons animate-pop-in">
+                            <a href="#contact" class="btn btn-primary ripple-btn animate-lively" data-animation-delay="0.2s">Get in Touch <i class="fas fa-arrow-right btn-icon"></i></a>
+                            <a href="#projects" class="btn btn-secondary ripple-btn animate-lively" data-animation-delay="0.4s">Explore My Work <i class="fas fa-arrow-right btn-icon"></i></a>
+                        </div>
                     </div>
-                </div>
-                <div class="hero-image">
-                    <div class="image-placeholder pulsate" role="img" aria-label="Profile image of Muhammad Jahanzeb"></div>
-                    <div class="circle-animation"></div>
+                    <div class="hero-image">
+                        <div class="avatar-container">
+                            <div class="avatar pulsate animate-lively" role="img" aria-label="Profile photo of Muhammad Jahanzeb"></div>
+                            <div class="circle-animation circle-animation-1"></div>
+                            <div class="circle-animation circle-animation-2"></div>
+                            <div class="circle-animation circle-animation-3"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="section about">
             <div class="container">
-                <h2 class="section-title">About <span>Me</span></h2>
-                <div class="about-content">
-                    <div class="about-text animate-slide-in">
-                        <p>A highly motivated Computer Science graduate with a strong foundation in programming, cybersecurity, and software development. Passionate about problem-solving, system security, and optimizing digital solutions.</p>
-                        <p>Experienced in developing web-based applications and implementing cybersecurity measures. Eager to apply analytical and technical skills in a dynamic, growth-oriented environment.</p>
+                <h2 class="section-title animate-lively">About <span>Me</span></h2>
+                <div class="about-timeline">
+                    <div class="timeline-item animate-slide-in" style="--delay: 0.2s">
+                        <div class="timeline-year">
+                            <span>2023</span>
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>BS Computer Science</h3>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Graduated with a CGPA of 3.19/4.0 from The University of Sindh, with a thesis on an Online Book Store.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="about-image animate-slide-in">
-                        <div class="floating-box"></div>
-                        <div class="image-placeholder" role="img" aria-label="Decorative image for About section"></div>
+                    <div class="timeline-item animate-slide-in" style="--delay: 0.4s">
+                        <div class="timeline-year">
+                            <span>2022</span>
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>SAP Cybersecurity Internship</h3>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Developed skills in identifying security risks and implementing countermeasures during a virtual internship.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-slide-in" style="--delay: 0.6s">
+                        <div class="timeline-year">
+                            <span>2022</span>
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Amal Academy Fellowship</h3>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Selected for a Stanford-funded fellowship, honing leadership and teamwork skills.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-slide-in" style="--delay: 0.8s">
+                        <div class="timeline-year">
+                            <span>2025</span>
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Pursuing Career Opportunities</h3>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Actively seeking roles in cybersecurity and software development to apply my skills and drive innovation.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience" class="section experience">
             <div class="container">
-                <h2 class="section-title">Work <span>Experience</span></h2>
+                <h2 class="section-title animate-lively">Work <span>Experience</span></h2>
                 <div class="timeline">
                     <div class="timeline-item animate-slide-in">
-                        <div class="timeline-date">Sep 2022 – Oct 2022</div>
-                        <div class="timeline-content">
-                            <h3 align="left">SAP Cybersecurity Engineering Virtual Internship Program</h3>
-                            <p class="location" align="left">Remote</p>
+                        <div class="timeline-date">
+                            <span>Sep 2022 – Oct 2022</span>
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="timeline-content experience-card">
+                            <h3>SAP Cybersecurity Engineering Virtual Internship</h3>
+                            <p class="location">Remote</p>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
-                                <p align="left">Identified security risks, simulated phishing attacks, and implemented countermeasures.</p>
+                                <p>Identified security risks, simulated phishing attacks, and implemented countermeasures.</p>
                             </div>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
-                                <p align="left">Strengthened authentication protocols and secured sensitive data.</p>
+                                <p>Strengthened authentication protocols and secured sensitive data.</p>
                             </div>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
-                                <p align="left">Assessed vulnerabilities and recommended cybersecurity improvements.</p>
+                                <p>Assessed vulnerabilities and recommended cybersecurity improvements.</p>
                             </div>
                         </div>
                     </div>
                     <div class="timeline-item animate-slide-in">
-                        <div class="timeline-date">Mar 2022 – Jun 2022</div>
-                        <div class="timeline-content">
+                        <div class="timeline-date">
+                            <span>Mar 2022 – Jun 2022</span>
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="timeline-content experience-card">
                             <h3>Amal Academy & Edhi Foundation</h3>
                             <p class="location">Karachi, Pakistan</p>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
-                                <p>Selected from 4000+ applicants for a 3-month Fellowship funded by Stanford University at Amal Academy.</p>
+                                <p>Selected from 4000+ applicants for a 3-month Fellowship funded by Stanford University.</p>
                             </div>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
@@ -119,7 +169,7 @@
                             </div>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
-                                <p>Led diverse teams on real-world projects, demonstrating adaptability and teamwork for impactful results.</p>
+                                <p>Led diverse teams on real-world projects, demonstrating adaptability and teamwork.</p>
                             </div>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
@@ -128,33 +178,36 @@
                         </div>
                     </div>
                     <div class="timeline-item animate-slide-in">
-                        <div class="timeline-date">Apr 2017 – Jan 2019</div>
-                        <div class="timeline-content">
-                            <h3 align="left">Indus Institute of Science and Technology</h3>
-                            <p class="location" align="left">Matli, Pakistan</p>
+                        <div class="timeline-date">
+                            <span>Apr 2017 – Jan 2019</span>
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="timeline-content experience-card">
+                            <h3>Indus Institute of Science and Technology</h3>
+                            <p class="location">Matli, Pakistan</p>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
-                                <p align="left">Deployed and maintained Windows/Ubuntu systems, apps, and hardware for seamless operations.</p>
+                                <p>Deployed and maintained Windows/Ubuntu systems, apps, and hardware for seamless operations.</p>
                             </div>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
-                                <p align="left">Troubleshot system/network issues, diagnosing faults and replacing parts to reduce downtime.</p>
+                                <p>Troubleshot system/network issues, diagnosing faults and replacing parts to reduce downtime.</p>
                             </div>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
-                                <p align="left">Assisted with LAN support, verifying hub/switch connections and fixing file-sharing problems.</p>
+                                <p>Assisted with LAN support, verifying hub/switch connections and fixing file-sharing problems.</p>
                             </div>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
-                                <p align="left">Handled printer setup and troubleshooting to support daily administrative tasks.</p>
+                                <p>Handled printer setup and troubleshooting to support daily administrative tasks.</p>
                             </div>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
-                                <p align="left">Installed/configurated software (e.g., MS Office) for academic and administrative needs.</p>
+                                <p>Installed/configured software (e.g., MS Office) for academic and administrative needs.</p>
                             </div>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
-                                <p align="left">Resolved user issues via account setup, password resets, and access troubleshooting.</p>
+                                <p>Resolved user issues via account setup, password resets, and access troubleshooting.</p>
                             </div>
                         </div>
                     </div>
@@ -162,15 +215,25 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="section projects">
             <div class="container">
-                <h2 class="section-title">Featured <span>Projects</span></h2>
+                <h2 class="section-title animate-lively">Featured <span>Projects</span></h2>
                 <div class="projects-grid">
-                    <div class="project-card animate-slide-in">
+                    <div class="project-card animate-slide-in animate-lively" data-tilt data-animation-delay="0.2s">
                         <div class="project-content">
                             <h3>Online Book Store</h3>
-                            <p>Developed an online bookstore using WordPress for books, stories, and novels. Customized the website using themes, widgets, and plugins. Managed the MySQL database via phpMyAdmin for queries and optimization.</p>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Developed an online bookstore using WordPress for books, stories, and novels.</p>
+                            </div>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Customized the website using themes, widgets, and plugins.</p>
+                            </div>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Managed the MySQL database via phpMyAdmin for queries and optimization.</p>
+                            </div>
                             <div class="project-tags">
                                 <span class="project-tag">WordPress</span>
                                 <span class="project-tag">MySQL</span>
@@ -181,10 +244,13 @@
                             </a>
                         </div>
                     </div>
-                    <div class="project-card animate-slide-in">
+                    <div class="project-card animate-slide-in animate-lively" data-tilt data-animation-delay="0.4s">
                         <div class="project-content">
                             <h3>Aerial Image Segmentation</h3>
-                            <p>Machine learning project using PyTorch to segment aerial images for urban planning applications with computer vision techniques.</p>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Machine learning project using PyTorch to segment aerial images for urban planning applications with computer vision techniques.</p>
+                            </div>
                             <div class="project-tags">
                                 <span class="project-tag">Python</span>
                                 <span class="project-tag">PyTorch</span>
@@ -195,23 +261,34 @@
                             </a>
                         </div>
                     </div>
-                    <div class="project-card animate-slide-in">
+                    <div class="project-card animate-slide-in animate-lively" data-tilt data-animation-delay="0.6s">
                         <div class="project-content">
                             <h3>Tic Tac Toe Game</h3>
-                            <p>Developed a complete Tic Tac Toe game in C with a graphical interface, user input handling, and win condition detection algorithms.</p>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Developed a JavaScript-based Tic Tac Toe game with an engaging user interface.</p>
+                            </div>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Integrated AI opponent with difficulty levels using the Minimax algorithm.</p>
+                            </div>
                             <div class="project-tags">
-                                <span class="project-tag">C</span>
-                                <span class="project-tag">Game Development</span>
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">HTML</span>
+                                <span class="project-tag">CSS</span>
                             </div>
                             <a class="project-link" href="https://github.com/mjahanzeb44" target="_blank" rel="noopener noreferrer" aria-label="View Tic Tac Toe Game on GitHub">
                                 <i class="fab fa-github"></i> View on GitHub
                             </a>
                         </div>
                     </div>
-                    <div class="project-card animate-slide-in">
+                    <div class="project-card animate-slide-in animate-lively" data-tilt data-animation-delay="0.8s">
                         <div class="project-content">
                             <h3>Number Guessing Game</h3>
-                            <p>Created an interactive number guessing game in C++ with hints, limited attempts, and score tracking features for an engaging user experience.</p>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Created an interactive number guessing game in C++ with hints, limited attempts, and score tracking features for an engaging user experience.</p>
+                            </div>
                             <div class="project-tags">
                                 <span class="project-tag">C++</span>
                                 <span class="project-tag">Game Logic</span>
@@ -221,10 +298,13 @@
                             </a>
                         </div>
                     </div>
-                    <div class="project-card animate-slide-in">
+                    <div class="project-card animate-slide-in animate-lively" data-tilt data-animation-delay="1.0s">
                         <div class="project-content">
                             <h3>Text Encryption Tool</h3>
-                            <p>Implemented a secure text encryption and decryption system in C++ using ASCII shift algorithm with customizable encryption keys.</p>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Implemented a secure text encryption and decryption system in C++ using ASCII shift algorithm with customizable encryption keys.</p>
+                            </div>
                             <div class="project-tags">
                                 <span class="project-tag">C++</span>
                                 <span class="project-tag">Cryptography</span>
@@ -234,10 +314,13 @@
                             </a>
                         </div>
                     </div>
-                    <div class="project-card animate-slide-in">
+                    <div class="project-card animate-slide-in animate-lively" data-tilt data-animation-delay="1.2s">
                         <div class="project-content">
                             <h3>Virtual Machine Configuration</h3>
-                            <p>Designed and configured Windows and Linux virtual machines in Oracle VM VirtualBox with security hardening and vulnerability testing.</p>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Designed and configured Windows and Linux virtual machines in Oracle VM VirtualBox with security hardening and vulnerability testing.</p>
+                            </div>
                             <div class="project-tags">
                                 <span class="project-tag">VirtualBox</span>
                                 <span class="project-tag">System Security</span>
@@ -251,88 +334,89 @@
             </div>
         </section>
 
-        <!-- Education Section -->
         <section id="education" class="section education">
             <div class="container">
-                <h2 class="section-title">Education <span>& Training</span></h2>
+                <h2 class="section-title animate-lively">Education <span>& Training</span></h2>
                 <div class="education-grid">
-                    <div class="education-card highlight-card degree-card animate-slide-in">
-                        <div class="education-date">Jan 2019 – May 2023</div>
-                        <h3>BS - Computer Science</h3>
-                        <p class="institution">The University of Sindh Jamshoro</p>
-                        <p class="location">Jamshoro, Pakistan</p>
-                        <div class="education-details">
+                    <div class="education-card degree-card animate-grow-in animate-slide-up animate-lively">
+                        <div class="education-date animate-fade-in" data-animation-delay="0.2s"><i class="fas fa-calendar-alt"></i> Jan 2019 – May 2023</div>
+                        <h3 class="animate-fade-in" data-animation-delay="0.3s"><i class="fas fa-graduation-cap"></i> BS - Computer Science</h3>
+                        <p class="institution animate-fade-in" data-animation-delay="0.4s"><i class="fas fa-university"></i> The University of Sindh Jamshoro</p>
+                        <p class="location animate-fade-in" data-animation-delay="0.5s">Jamshoro, Pakistan</p>
+                        <div class="education-details animate-fade-in" data-animation-delay="0.6s">
                             <p><strong>Final grade:</strong> CGPA: 3.19/4.0</p>
                             <p><strong>Thesis:</strong> Online Books Store</p>
                         </div>
                     </div>
-                    <div class="education-card certification-card animate-slide-in">
-                        <h3>Core Technical Certifications</h3>
-                        <div class="bullet-item">
+                    <div class="education-card certification-card animate-grow-in animate-slide-up animate-lively">
+                        <h3 class="animate-fade-in" data-animation-delay="0.2s"><i class="fas fa-certificate"></i> Core Technical Certifications</h3>
+                        <div class="bullet-item animate-fade-in" data-animation-delay="0.3s">
                             <div class="bullet"></div>
-                            <p><span class="cert-name">Career Essentials in System Administration</span> (Microsoft and LinkedIn, Mar 2025)</p>
+                            <p><span class="cert-name purple-text">Career Essentials in System Administration</span> <span class="blue-text">(Microsoft and LinkedIn, Mar 2025)</span></p>
                         </div>
-                        <div class="bullet-item">
+                        <div class="bullet-item animate-fade-in" data-animation-delay="0.4s">
                             <div class="bullet"></div>
-                            <p><span class="cert-name">Foundations: Data, Data, Everywhere</span> (Google via Coursera, Apr 2023)</p>
+                            <p><span class="cert-name purple-text">Foundations: Data, Data, Everywhere</span> <span class="blue-text">(Google via Coursera, Apr 2023)</span></p>
                         </div>
-                        <div class="bullet-item">
+                        <div class="bullet-item animate-fade-in" data-animation-delay="0.5s">
                             <div class="bullet"></div>
-                            <p><span class="cert-name">Introduction to Cybersecurity</span> (Cisco Networking Academy, Nov 2022)</p>
+                            <p><span class="cert-name purple-text">Introduction to Cybersecurity</span> <span class="blue-text">(Cisco Networking Academy, Nov 2022)</span></p>
                         </div>
-                        <div class="bullet-item">
+                        <div class="bullet-item animate-fade-in" data-animation-delay="0.6s">
                             <div class="bullet"></div>
-                            <p><span class="cert-name">Introduction to Artificial Intelligence</span> (SkillUP by SimpliLearn, Oct 2022)</p>
+                            <p><span class="cert-name purple-text">Introduction to Artificial Intelligence</span> <span class="blue-text">(SkillUP by SimpliLearn, Oct 2022)</span></p>
                         </div>
-                        <div class="bullet-item">
+                        <div class="bullet-item animate-fade-in" data-animation-delay="0.7s">
                             <div class="bullet"></div>
-                            <p><span class="cert-name">Introduction to Cloud Computing</span> (SkillUP by SimpliLearn, Oct 2022)</p>
+                            <p><span class="cert-name purple-text">Introduction to Cloud Computing</span> <span class="blue-text">(SkillUP by SimpliLearn, Oct 2022)</span></p>
                         </div>
-                        <div class="bullet-item">
+                        <div class="bullet-item animate-fade-in" data-animation-delay="0.8s">
                             <div class="bullet"></div>
-                            <p><span class="cert-name">Data Analytics and Business Intelligence</span> (DigiSkills, Oct 2022)</p>
+                            <p><span class="cert-name purple-text">Data Analytics and Business Intelligence</span> <span class="blue-text">(DigiSkills, Oct 2022)</span></p>
                         </div>
-                        <div class="bullet-item">
+                        <div class="bullet-item animate-fade-in" data-animation-delay="0.9s">
                             <div class="bullet"></div>
-                            <p><span class="cert-name">Front-End Development</span> (Professional Freelancing Training Program, Oct 2022)</p>
+                            <p><span class="cert-name purple-text">Front-End Development</span> <span class="blue-text">(Professional Freelancing Training Program, Oct 2022)</span></p>
                         </div>
-                        <div class="bullet-item">
+                        <div class="bullet-item animate-fade-in" data-animation-delay="1.0s">
                             <div class="bullet"></div>
-                            <p><span class="cert-name">WordPress</span> (DigiSkills, May 2022)</p>
+                            <p><span class="cert-name purple-text">WordPress</span> <span class="blue-text">(DigiSkills, May 2022)</span></p>
                         </div>
                     </div>
-                    <div class="education-card certification-card animate-slide-in">
-                        <h3>Supplementary Certifications</h3>
-                        <div class="bullet-item">
-                            <div class="bullet"></div>
-                            <p><span class="cert-name">Introduction to Quantum Computing</span> (Udemy, Oct 2022)</p>
-                        </div>
-                        <div class="bullet-item">
-                            <div class="bullet"></div>
-                            <p><span class="cert-name">Video Editing, Animation and Vlogging</span> (DigiSkills, Oct 2022)</p>
-                        </div>
-                        <div class="bullet-item">
-                            <div class="bullet"></div>
-                            <p><span class="cert-name">Graphic Design</span> (DigiSkills, Aug 2020)</p>
-                        </div>
-                        <div class="bullet-item">
-                            <div class="bullet"></div>
-                            <p><span class="cert-name">Freelancing</span> (DigiSkills, Aug 2020)</p>
+                    <div class="education-card certification-card animate-grow-in animate-slide-up animate-lively">
+                        <h3 class="animate-fade-in" data-animation-delay="0.2s"><i class="fas fa-certificate"></i> Supplementary Certifications</h3>
+                        <button class="accordion-toggle animate-scale-in" data-animation-delay="0.3s" aria-expanded="false">Show More</button>
+                        <div class="accordion-content">
+                            <div class="bullet-item animate-fade-in" data-animation-delay="0.4s">
+                                <div class="bullet"></div>
+                                <p><span class="cert-name purple-text">Introduction to Quantum Computing</span> <span class="blue-text">(Udemy, Oct 2022)</span></p>
+                            </div>
+                            <div class="bullet-item animate-fade-in" data-animation-delay="0.5s">
+                                <div class="bullet"></div>
+                                <p><span class="cert-name purple-text">Video Editing, Animation and Vlogging</span> <span class="blue-text">(DigiSkills, Oct 2022)</span></p>
+                            </div>
+                            <div class="bullet-item animate-fade-in" data-animation-delay="0.6s">
+                                <div class="bullet"></div>
+                                <p><span class="cert-name purple-text">Graphic Design</span> <span class="blue-text">(DigiSkills, Aug 2020)</span></p>
+                            </div>
+                            <div class="bullet-item animate-fade-in" data-animation-delay="0.7s">
+                                <div class="bullet"></div>
+                                <p><span class="cert-name purple-text">Freelancing</span> <span class="blue-text">(DigiSkills, Aug 2020)</span></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="section skills">
             <div class="container">
-                <h2 class="section-title">Technical <span>Skills</span></h2>
+                <h2 class="section-title animate-lively">Technical <span>Skills</span></h2>
                 <div class="skills-container">
-                    <div class="skills-category animate-slide-in">
+                    <div class="skills-category animate-slide-in animate-lively">
                         <h3>Development Software</h3>
                         <div class="skill-item">
-                            <h4>Oracle VM VirtualBox</h4>
+                            <h4><i class="fas fa-server"></i> Oracle VM VirtualBox</h4>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
                                 <p>Designed and configured Windows and Linux virtual machines for secure, scalable deployments.</p>
@@ -346,14 +430,25 @@
                                 <p>Implemented system hardening techniques to enhance resilience against cyber threats.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="skills-category animate-slide-in">
-                        <h3>Programming Languages</h3>
                         <div class="skill-item">
-                            <h4>C/C++</h4>
+                            <h4><i class="fab fa-wordpress"></i> WordPress</h4>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
-                                <p>Developed a Tic Tac Toe game in C.</p>
+                                <p>Developed and customized websites using themes, widgets, and plugins.</p>
+                            </div>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Managed MySQL databases via phpMyAdmin for efficient queries and optimization.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-category animate-slide-in animate-lively">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-item">
+                            <h4><i class="fas fa-code"></i> C/C++</h4>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Developed a Tic Tac Toe game in C with graphical interface and win condition detection.</p>
                             </div>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
@@ -373,92 +468,192 @@
                             </div>
                         </div>
                         <div class="skill-item">
-                            <h4>Python</h4>
+                            <h4><i class="fab fa-python"></i> Python</h4>
                             <div class="bullet-item">
                                 <div class="bullet"></div>
-                                <p>Aerial Image Segmentation with PyTorch.</p>
+                                <p>Developed Aerial Image Segmentation project using PyTorch for urban planning applications.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="skills-category animate-slide-in">
+                    <div class="skills-category animate-slide-in animate-lively">
                         <h3>Additional Skills</h3>
-                        <div class="bullet-item">
-                            <div class="bullet"></div>
-                            <p>Microsoft Office (Word, Excel, Access, PowerPoint)</p>
+                        <div class="skill-item">
+                            <h4><i class="fas fa-file-alt"></i> LaTeX/Overleaf</h4>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Prepared professional documents for academic and technical purposes.</p>
+                            </div>
                         </div>
-                        <div class="bullet-item">
-                            <div class="bullet"></div>
-                            <p>LaTeX/Overleaf for professional document preparation</p>
+                        <div class="skill-item">
+                            <h4><i class="fas fa-database"></i> SQL</h4>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Managed databases and performed efficient queries for data management.</p>
+                            </div>
                         </div>
-                        <div class="bullet-item">
-                            <div class="bullet"></div>
-                            <p>SQL for database management and queries</p>
-                        </div>
-                        <div class="bullet-item">
-                            <div class="bullet"></div>
-                            <p>WordPress website development</p>
+                        <div class="skill-item">
+                            <h4><i class="fas fa-file-word"></i> Microsoft Office</h4>
+                            <div class="bullet-item">
+                                <div class="bullet"></div>
+                                <p>Proficient in Word, Excel, Access, and PowerPoint for professional tasks.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Languages & Strengths Section -->
         <section id="languages-strengths" class="section languages-strengths">
             <div class="container">
-                <h2 class="section-title">Languages & <span>Strengths</span></h2>
-                <div class="ls-grid">
-                    <div class="languages animate-slide-in">
-                        <div class="language-item">
-                            <p><strong>Mother tongue(s):</strong> URDU</p>
+                <h2 class="section-title animate-lively">Languages & <span>Strengths</span></h2>
+                <div class="ls-content">
+                    <div class="languages">
+                        <h3 class="subsection-title">Languages</h3>
+                        <div class="language-card animate-slide-in animate-language-card native-language animate-lively">
+                            <div class="language-header">
+                                <i class="fas fa-language"></i>
+                                <h4>Urdu</h4>
+                            </div>
+                            <div class="progress-circle-container">
+                                <svg class="progress-circle" viewBox="0 0 100 100">
+                                    <defs>
+                                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" style="stop-color: var(--primary-color);" />
+                                            <stop offset="100%" style="stop-color: var(--primary-dark);" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle class="progress-circle-bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="progress-circle-fill" cx="50" cy="50" r="45" data-progress="100" data-animation-delay="0.2s"></circle>
+                                </svg>
+                            </div>
+                            <p>Native proficiency</p>
                         </div>
-                        <div class="language-item">
-                            <h3>ENGLISH</h3>
-                            <table>
-                                <tr>
-                                    <th>Understanding</th>
-                                    <th>Speaking</th>
-                                    <th>Writing</th>
-                                </tr>
-                                <tr>
-                                    <td>Listening: C1</td>
-                                    <td>Spoken production: B2</td>
-                                    <td>C1</td>
-                                </tr>
-                                <tr>
-                                    <td>Reading: C1</td>
-                                    <td>Spoken interaction: C1</td>
-                                    <td></td>
-                                </tr>
-                            </table>
-                            <p class="language-levels">Levels: A1 and A2: Basic user; B1 and B2: Independent user; C1 and C2: Proficient user</p>
+                        <div class="language-card animate-slide-in animate-language-card animate-lively">
+                            <div class="language-header">
+                                <i class="fas fa-language"></i>
+                                <h4>English</h4>
+                            </div>
+                            <ul class="language-details">
+                                <li data-animation="fade-in" data-animation-delay="0.2s">
+                                    <strong>
+                                        <span class="attribute-text purple-text">Listening: </span>
+                                        <span class="proficiency-text blue-text">C1 (Proficient)</span>
+                                    </strong>
+                                    <div class="progress-circle-container">
+                                        <svg class="progress-circle" viewBox="0 0 100 100">
+                                            <defs>
+                                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" style="stop-color: var(--primary-color);" />
+                                                    <stop offset="100%" style="stop-color: var(--primary-dark);" />
+                                                </linearGradient>
+                                            </defs>
+                                            <circle class="progress-circle-bg" cx="50" cy="50" r="45"></circle>
+                                            <circle class="progress-circle-fill" cx="50" cy="50" r="45" data-progress="100" data-animation-delay="0.4s"></circle>
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li data-animation="fade-in" data-animation-delay="0.3s">
+                                    <strong>
+                                        <span class="attribute-text purple-text">Reading: </span>
+                                        <span class="proficiency-text blue-text">C1 (Proficient)</span>
+                                    </strong>
+                                    <div class="progress-circle-container">
+                                        <svg class="progress-circle" viewBox="0 0 100 100">
+                                            <defs>
+                                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" style="stop-color: var(--primary-color);" />
+                                                    <stop offset="100%" style="stop-color: var(--primary-dark);" />
+                                                </linearGradient>
+                                            </defs>
+                                            <circle class="progress-circle-bg" cx="50" cy="50" r="45"></circle>
+                                            <circle class="progress-circle-fill" cx="50" cy="50" r="45" data-progress="100" data-animation-delay="0.5s"></circle>
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li data-animation="fade-in" data-animation-delay="0.4s">
+                                    <strong>
+                                        <span class="attribute-text purple-text">Spoken Production: </span>
+                                        <span class="proficiency-text blue-text">B2 (Independent)</span>
+                                    </strong>
+                                    <div class="progress-circle-container">
+                                        <svg class="progress-circle" viewBox="0 0 100 100">
+                                            <defs>
+                                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" style="stop-color: var(--primary-color);" />
+                                                    <stop offset="100%" style="stop-color: var(--primary-dark);" />
+                                                </linearGradient>
+                                            </defs>
+                                            <circle class="progress-circle-bg" cx="50" cy="50" r="45"></circle>
+                                            <circle class="progress-circle-fill" cx="50" cy="50" r="45" data-progress="70" data-animation-delay="0.6s"></circle>
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li data-animation="fade-in" data-animation-delay="0.5s">
+                                    <strong>
+                                        <span class="attribute-text purple-text">Spoken Interaction: </span>
+                                        <span class="proficiency-text blue-text">C1 (Proficient)</span>
+                                    </strong>
+                                    <div class="progress-circle-container">
+                                        <svg class="progress-circle" viewBox="0 0 100 100">
+                                            <defs>
+                                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" style="stop-color: var(--primary-color);" />
+                                                    <stop offset="100%" style="stop-color: var(--primary-dark);" />
+                                                </linearGradient>
+                                            </defs>
+                                            <circle class="progress-circle-bg" cx="50" cy="50" r="45"></circle>
+                                            <circle class="progress-circle-fill" cx="50" cy="50" r="45" data-progress="100" data-animation-delay="0.7s"></circle>
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li data-animation="fade-in" data-animation-delay="0.6s">
+                                    <strong>
+                                        <span class="attribute-text purple-text">Writing: </span>
+                                        <span class="proficiency-text blue-text">C1 (Proficient)</span>
+                                    </strong>
+                                    <div class="progress-circle-container">
+                                        <svg class="progress-circle" viewBox="0 0 100 100">
+                                            <defs>
+                                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" style="stop-color: var(--primary-color);" />
+                                                    <stop offset="100%" style="stop-color: var(--primary-dark);" />
+                                                </linearGradient>
+                                            </defs>
+                                            <circle class="progress-circle-bg" cx="50" cy="50" r="45"></circle>
+                                            <circle class="progress-circle-fill" cx="50" cy="50" r="45" data-progress="100" data-animation-delay="0.8s"></circle>
+                                        </svg>
+                                    </div>
+                                </li>
+                            </ul>
+                            <p class="language-note">Levels: A1-A2 (Beginner), B1-B2 (Independent), C1-C2 (Proficient)</p>
                         </div>
                     </div>
-                    <div class="strengths animate-slide-in">
+                    <div class="strengths">
+                        <h3 class="subsection-title">Strengths</h3>
                         <div class="strengths-grid">
-                            <div class="strength-item animate-strength-in">
+                            <div class="strength-badge animate-slide-in animate-lively" data-animation-delay="0.2s">
                                 <i class="fas fa-hard-hat"></i>
-                                <h3>Hard-work</h3>
+                                <span>Hard Work</span>
                             </div>
-                            <div class="strength-item animate-strength-in">
+                            <div class="strength-badge animate-slide-in animate-lively" data-animation-delay="0.4s">
                                 <i class="fas fa-flag"></i>
-                                <h3>Leadership</h3>
+                                <span>Leadership</span>
                             </div>
-                            <div class="strength-item animate-strength-in">
+                            <div class="strength-badge animate-slide-in animate-lively" data-animation-delay="0.6s">
                                 <i class="fas fa-brain"></i>
-                                <h3>Critical Thinking</h3>
+                                <span>Critical Thinking</span>
                             </div>
-                            <div class="strength-item animate-strength-in">
+                            <div class="strength-badge animate-slide-in animate-lively" data-animation-delay="0.8s">
                                 <i class="fas fa-puzzle-piece"></i>
-                                <h3>Problem Solving</h3>
+                                <span>Problem Solving</span>
                             </div>
-                            <div class="strength-item animate-strength-in">
+                            <div class="strength-badge animate-slide-in animate-lively" data-animation-delay="1.0s">
                                 <i class="fas fa-clock"></i>
-                                <h3>Time Management</h3>
+                                <span>Time Management</span>
                             </div>
-                            <div class="strength-item animate-strength-in">
+                            <div class="strength-badge animate-slide-in animate-lively" data-animation-delay="1.2s">
                                 <i class="fas fa-comments"></i>
-                                <h3>Communication</h3>
+                                <span>Communication</span>
                             </div>
                         </div>
                     </div>
@@ -466,66 +661,72 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="section contact">
             <div class="container">
-                <h2 class="section-title">Get In <span>Touch</span></h2>
+                <h2 class="section-title animate-lively">Get In <span>Touch</span></h2>
                 <div class="contact-content">
-                    <form class="contact-form animate-slide-in" action="https://formspree.io/f/mvgavgpq" method="POST" id="contact-form">
+                    <form class="contact-form animate-slide-in animate-lively" action="https://formspree.io/f/mvgavgpq" method="POST" id="contact-form">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required aria-required="true">
+                            <span id="name-error" class="form-error"></span>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" required aria-required="true">
+                            <span id="email-error" class="form-error"></span>
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
                             <input type="text" id="subject" name="subject" required aria-required="true">
+                            <span id="subject-error" class="form-error"></span>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                            <span id="message-error" class="form-error"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary ripple-btn animate-lively" data-animation-delay="0.2s">Send Message</button>
                         <div id="form-status" class="form-message" aria-live="polite"></div>
                     </form>
                     <div class="contact-details">
-                        <div class="contact-item animate-slide-in">
+                        <div class="contact-item animate-slide-in animate-lively" data-animation-delay="0.2s">
                             <i class="fas fa-phone"></i>
                             <div>
                                 <h3>Phone</h3>
                                 <p>(+92) 300-7021303</p>
                             </div>
                         </div>
-                        <div class="contact-item animate-slide-in">
+                        <div class="contact-item animate-slide-in animate-lively" data-animation-delay="0.4s">
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h3>Email</h3>
                                 <p><a href="mailto:mjahanzeb44@gmail.com">mjahanzeb44@gmail.com</a></p>
                             </div>
                         </div>
-                        <div class="contact-item animate-slide-in">
+                        <div class="contact-item animate-slide-in animate-lively" data-animation-delay="0.6s">
                             <i class="fab fa-github"></i>
                             <div>
                                 <h3>GitHub</h3>
                                 <p><a href="https://github.com/mjahanzeb44" target="_blank">github.com/mjahanzeb44</a></p>
                             </div>
                         </div>
-                        <div class="contact-item animate-slide-in">
+                        <div class="contact-item animate-slide-in animate-lively" data-animation-delay="0.8s">
                             <i class="fab fa-linkedin"></i>
                             <div>
                                 <h3>LinkedIn</h3>
                                 <p><a href="https://linkedin.com/in/mjahanzeb44" target="_blank">linkedin.com/in/mjahanzeb44</a></p>
                             </div>
                         </div>
-                        <div class="contact-item animate-slide-in">
+                        <div class="contact-item animate-slide-in animate-lively" data-animation-delay="1.0s">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <h3>Location</h3>
                                 <p>Karachi-based | Nationwide relocation flexibility</p>
                             </div>
+                        </div>
+                        <div class="contact-map animate-slide-in animate-lively" data-animation-delay="1.2s">
+                            <div id="map"></div>
                         </div>
                     </div>
                 </div>
@@ -533,29 +734,39 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
-                <a href="#hero" class="footer-logo" aria-label="Muhammad Jahanzeb's Homepage">
-                    <div class="footer-logo-circle">MJ</div>
-                    <span>Muhammad Jahanzeb</span>
-                </a>
-                <div class="footer-right">
+                <div class="footer-logo-section">
+                    <a href="#hero" class="footer-logo" aria-label="Muhammad Jahanzeb's Homepage">
+                        <div class="footer-logo-circle">MJ</div>
+                        <span>Muhammad Jahanzeb</span>
+                    </a>
+                    <p class="footer-description">Computer Science professional passionate about cybersecurity and software development.</p>
+                </div>
+                <div class="footer-social-section">
+                    <h3>Connect</h3>
                     <div class="footer-social">
-                        <a href="https://linkedin.com/in/mjahanzeb44" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:mjahanzeb44@gmail.com" aria-label="Email Muhammad Jahanzeb"><i class="fas fa-envelope"></i></a>
-                        <a href="https://github.com/mjahanzeb44" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/mjahanzeb44" target="_blank" class="social-flip animate-lively" aria-label="LinkedIn Profile" data-animation-delay="0.2s"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:mjahanzeb44@gmail.com" class="social-flip animate-lively" aria-label="Email Muhammad Jahanzeb" data-animation-delay="0.4s"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/mjahanzeb44" target="_blank" class="social-flip animate-lively" aria-label="GitHub Profile" data-animation-delay="0.6s"><i class="fab fa-github"></i></a>
                     </div>
-                    <a href="#hero" id="back-to-top" class="back-to-top">↑ Return to Top</a>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>© 2025 Muhammad Jahanzeb. All rights reserved.</p>
+                <p>Last Updated: May 21, 2025</p>
             </div>
         </div>
     </footer>
 
+    <button class="return-to-top animate-lively" aria-label="Return to top of page" data-animation-delay="0.2s">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
