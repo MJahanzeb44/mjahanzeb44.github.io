@@ -43,8 +43,8 @@ navLinks.querySelectorAll('a').forEach(link => {
 // Scroll Animations
 const animateElements = document.querySelectorAll('.animate-pop-in, .animate-slide-in, .animate-language-card, .animate-grow-in, .animate-fade-in, .animate-slide-up, .animate-scale-in');
 const observerOptions = {
-    threshold: 0.15, // Refined for earlier trigger
-    rootMargin: '0px 0px -30px 0px' // Refined for smoother scroll
+    threshold: 0.2, // Adjusted for smoother trigger
+    rootMargin: '0px 0px -50px 0px' // Adjusted for better scroll motion
 };
 
 const observer = new IntersectionObserver((entries) => {

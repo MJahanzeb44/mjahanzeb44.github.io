@@ -1692,7 +1692,7 @@ footer {
 .animate-pop-in {
     opacity: 0;
     transform: scale(0.9); /* Refined */
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Smoothed */
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Refined timing */
 }
 
 .animate-pop-in.animated {
@@ -1703,7 +1703,7 @@ footer {
 .animate-slide-in {
     opacity: 0;
     transform: translateY(30px); /* Refined */
-    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); /* Smoothed */
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Refined timing */
     transition-delay: calc(var(--delay, 0s));
 }
 
@@ -1715,7 +1715,7 @@ footer {
 .animate-grow-in {
     opacity: 0;
     transform: scale(0.95);
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Smoothed */
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Refined timing */
 }
 
 .animate-grow-in.animated {
@@ -1726,7 +1726,7 @@ footer {
 .animate-fade-in {
     opacity: 0;
     transform: translateY(10px);
-    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoothed */
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Refined timing */
     transition-delay: calc(var(--animation-delay, 0s));
 }
 
@@ -1738,7 +1738,7 @@ footer {
 .animate-slide-up {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* New */
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Refined timing */
 }
 
 .animate-slide-up.animated {
@@ -1749,7 +1749,7 @@ footer {
 .animate-scale-in {
     opacity: 0;
     transform: scale(0.95);
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* New */
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Refined timing */
 }
 
 .animate-scale-in.animated {
@@ -1760,7 +1760,7 @@ footer {
 .animate-language-card {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); /* Smoothed */
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Refined timing */
 }
 
 .animate-language-card.animated {
@@ -1769,6 +1769,33 @@ footer {
 }
 
 /* ================ RESPONSIVE DESIGN ================ */
+@media (max-width: 1024px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .hero-image {
+        max-width: 350px;
+    }
+
+    .avatar {
+        width: 250px;
+        height: 250px;
+    }
+
+    .circle-animation-1 { width: 270px; height: 270px; }
+    .circle-animation-2 { width: 290px; height: 290px; }
+    .circle-animation-3 { width: 310px; height: 310px; }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     body {
         font-size: 1.1rem;
@@ -1925,5 +1952,39 @@ footer {
     .progress-circle-container {
         width: 60px;
         height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 12px 24px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .ls-content {
+        flex-direction: column;
+    }
+
+    .contact-map {
+        height: 200px;
     }
 }
