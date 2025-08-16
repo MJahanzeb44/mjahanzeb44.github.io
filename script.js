@@ -43,8 +43,8 @@ navLinks.querySelectorAll('a').forEach(link => {
 // Scroll Animations
 const animateElements = document.querySelectorAll('.animate-pop-in, .animate-slide-in, .animate-language-card, .animate-grow-in, .animate-fade-in, .animate-slide-up, .animate-scale-in');
 const observerOptions = {
-    threshold: 0.2, // Adjusted for smoother trigger
-    rootMargin: '0px 0px -50px 0px' // Adjusted for better scroll motion
+    threshold: 0.1, // Earlier trigger for smoother animations
+    rootMargin: '0px 0px -100px 0px' // Adjusted for better scroll motion
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -109,11 +109,11 @@ function updateParticlesColor() {
 updateParticlesColor();
 
 // Leaflet Map Configuration
-const map = L.map('map').setView([24.8607, 67.0011], 12);
+const map = L.map('map').setView([33.6844, 73.0479], 12);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
-L.marker([24.8607, 67.0011]).addTo(map).bindPopup('Karachi, Pakistan').openPopup();
+L.marker([33.6844, 73.0479]).addTo(map).bindPopup('Islamabad, Pakistan').openPopup();
 
 // Form Validation and Submission
 const contactForm = document.getElementById('contact-form');

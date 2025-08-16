@@ -1692,7 +1692,7 @@ footer {
 .animate-pop-in {
     opacity: 0;
     transform: scale(0.9); /* Refined */
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Refined timing */
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Faster timing */
 }
 
 .animate-pop-in.animated {
@@ -1703,7 +1703,7 @@ footer {
 .animate-slide-in {
     opacity: 0;
     transform: translateY(30px); /* Refined */
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Refined timing */
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Faster timing */
     transition-delay: calc(var(--delay, 0s));
 }
 
@@ -1715,7 +1715,7 @@ footer {
 .animate-grow-in {
     opacity: 0;
     transform: scale(0.95);
-    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Refined timing */
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Faster timing */
 }
 
 .animate-grow-in.animated {
@@ -1726,7 +1726,7 @@ footer {
 .animate-fade-in {
     opacity: 0;
     transform: translateY(10px);
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Refined timing */
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); /* Faster timing */
     transition-delay: calc(var(--animation-delay, 0s));
 }
 
@@ -1738,7 +1738,7 @@ footer {
 .animate-slide-up {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Refined timing */
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Faster timing */
 }
 
 .animate-slide-up.animated {
@@ -1749,7 +1749,7 @@ footer {
 .animate-scale-in {
     opacity: 0;
     transform: scale(0.95);
-    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Refined timing */
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Faster timing */
 }
 
 .animate-scale-in.animated {
@@ -1760,7 +1760,7 @@ footer {
 .animate-language-card {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Refined timing */
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Faster timing */
 }
 
 .animate-language-card.animated {
@@ -1793,6 +1793,25 @@ footer {
 
     .skills-container {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .about-timeline, .experience .timeline {
+        max-width: 100%;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        padding: 0;
+        align-items: center;
+    }
+
+    .timeline-year, .timeline-date {
+        position: static;
+        margin-bottom: 10px;
+    }
+
+    .timeline-content {
+        width: 100%;
     }
 }
 
@@ -1891,6 +1910,8 @@ footer {
     .timeline-year {
         left: 0 !important;
         right: auto !important;
+        position: static;
+        margin-bottom: 10px;
     }
 
     .experience .timeline::before {
@@ -1898,6 +1919,7 @@ footer {
     }
 
     .experience .timeline-item {
+        flex-direction: column;
         padding: 0 0 0 60px;
     }
 
@@ -1915,6 +1937,8 @@ footer {
     .experience .timeline-date {
         left: 0 !important;
         right: auto !important;
+        position: static;
+        margin-bottom: 10px;
     }
 
     .contact-content {
@@ -1987,4 +2011,31 @@ footer {
     .contact-map {
         height: 200px;
     }
+
+    .timeline-item {
+        padding: 0 0 0 40px;
+    }
+
+    .timeline-content {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1440px;
+    }
+
+    .hero-text h1 {
+        font-size: 4rem;
+    }
+
+    .avatar {
+        width: 350px;
+        height: 350px;
+    }
+
+    .circle-animation-1 { width: 370px; height: 370px; }
+    .circle-animation-2 { width: 390px; height: 390px; }
+    .circle-animation-3 { width: 410px; height: 410px; }
 }
