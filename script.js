@@ -199,7 +199,7 @@ document.querySelectorAll('.accordion-toggle').forEach(button => {
 
 // Vanilla Tilt for Project Cards
 VanillaTilt.init(document.querySelectorAll('[data-tilt]'), {
-    max: 15,
+    max: 10, // Reduced for subtlety
     speed: 400,
     glare: true,
     'max-glare': 0.5

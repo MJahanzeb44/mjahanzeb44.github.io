@@ -853,7 +853,7 @@ header .container {
 }
 
 .project-card:hover {
-    transform: translateY(-10px) rotate(2deg);
+    transform: translateY(-10px) rotate(2deg) scale(1.05);
     box-shadow: var(--hover-shadow);
     border-color: var(--primary-color);
 }
@@ -1153,6 +1153,11 @@ header .container {
 
 .skill-item h4 i {
     font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-item h4:hover i {
+    transform: rotate(15deg);
 }
 
 /* ================ LANGUAGES & STRENGTHS SECTION ================ */
@@ -1404,6 +1409,8 @@ header .container {
     border-color: var(--primary-color);
     outline: none;
     box-shadow: 0 0 5px rgba(123, 44, 191, 0.3);
+    opacity: 1; /* Fade-in on focus */
+    transform: translateY(-2px);
 }
 
 .form-error {
@@ -1454,7 +1461,7 @@ header .container {
 }
 
 .contact-item:hover {
-    transform: translateY(-5px) rotate(2deg);
+    transform: translateY(-5px) rotate(2deg) scale(1.02);
     box-shadow: var(--hover-shadow);
 }
 
@@ -1625,6 +1632,7 @@ footer {
     background: var(--white);
     color: var(--primary-color);
     transform: rotateY(360deg) scale(1.1);
+    box-shadow: 0 0 10px rgba(123, 44, 191, 0.3);
 }
 
 /* ================ RETURN TO TOP BUTTON ================ */
@@ -1769,49 +1777,72 @@ footer {
 }
 
 /* ================ RESPONSIVE DESIGN ================ */
-@media (max-width: 1024px) {
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
     .hero-text h1 {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
-    .hero-image {
-        max-width: 350px;
+    .hero-text p {
+        font-size: 1rem;
     }
 
-    .avatar {
-        width: 250px;
-        height: 250px;
+    .btn {
+        padding: 12px 24px;
     }
-
-    .circle-animation-1 { width: 270px; height: 270px; }
-    .circle-animation-2 { width: 290px; height: 290px; }
-    .circle-animation-3 { width: 310px; height: 310px; }
 
     .projects-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-template-columns: 1fr;
     }
 
     .skills-container {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-template-columns: 1fr;
     }
 
-    .about-timeline, .experience .timeline {
-        max-width: 100%;
+    .ls-content {
+        flex-direction: column;
+    }
+
+    .contact-map {
+        height: 200px;
     }
 
     .timeline-item {
-        flex-direction: column;
-        padding: 0;
-        align-items: center;
-    }
-
-    .timeline-year, .timeline-date {
-        position: static;
-        margin-bottom: 10px;
+        padding: 0 0 0 40px;
     }
 
     .timeline-content {
-        width: 100%;
+        padding: 20px;
+    }
+
+    .progress-circle-container {
+        width: 60px;
+        height: 60px;
+    }
+
+    .avatar {
+        width: 200px;
+        height: 200px;
+    }
+
+    .circle-animation-1 { width: 220px; height: 220px; }
+    .circle-animation-2 { width: 240px; height: 240px; }
+    .circle-animation-3 { width: 260px; height: 260px; }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
     }
 }
 
@@ -1979,45 +2010,49 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
-    .section-title {
-        font-size: 2rem;
-    }
-
+@media (max-width: 1024px) {
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
-    .hero-text p {
-        font-size: 1rem;
+    .hero-image {
+        max-width: 350px;
     }
 
-    .btn {
-        padding: 12px 24px;
+    .avatar {
+        width: 250px;
+        height: 250px;
     }
+
+    .circle-animation-1 { width: 270px; height: 270px; }
+    .circle-animation-2 { width: 290px; height: 290px; }
+    .circle-animation-3 { width: 310px; height: 310px; }
 
     .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
 
     .skills-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
 
-    .ls-content {
-        flex-direction: column;
-    }
-
-    .contact-map {
-        height: 200px;
+    .about-timeline, .experience .timeline {
+        max-width: 100%;
     }
 
     .timeline-item {
-        padding: 0 0 0 40px;
+        flex-direction: column;
+        padding: 0;
+        align-items: center;
+    }
+
+    .timeline-year, .timeline-date {
+        position: static;
+        margin-bottom: 10px;
     }
 
     .timeline-content {
-        padding: 20px;
+        width: 100%;
     }
 }
 
